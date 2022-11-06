@@ -1,8 +1,10 @@
 from geoapi import GeoApi
 from icecream import IceCream
+from dcodes import DCodes
 
 weather = GeoApi() # Class instance
-icecream = IceCream() # Class instance
+icecream = IceCream() # "
+dcodes = DCodes() # "
 
 if __name__ == "__main__":
     
@@ -34,7 +36,21 @@ if __name__ == "__main__":
         except ValueError:
             print("Oops!  That was no valid quantity.  Try again...")
 
-    
-    #if validate_discount_code("primavera2021"):
-    #    print(f'Product : {products[products["code"]==code]["product_name"].unique()}  Quantity : {q}')
-    #else: print("Noválido")
+    while True:
+        dc = str(input("Discount Code :"))
+        if dcodes.validate_discount_code(dc) :
+            print(f'Product : {icecream.get_products()[icecream.get_products()["code"]==code]["product_name"].unique()}  Quantity : {q}')
+            break
+        else: print("Oops!  Not valid code.  Try again...")
+
+    while True:
+        confirmation = input("Confirmation (y/n) :")
+        if confirmation == "y":
+            print("The order goes out... :)")
+            break
+        elif confirmation =="n":
+            print("Start again ;)") 
+            break
+        else: print("Oops!  Not valid entry.  Try again...")
+        
+
