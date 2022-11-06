@@ -30,3 +30,13 @@ if __name__ == "__main__":
             else: print("Oops!  No available.  Try again...")
         except ValueError:
             print("Oops!  That was no valid code.  Try again...")
+    
+    while True:
+        try:
+            q = int(input("Quantity :"))
+            quantity_item = int(products[products["code"]==code]["quantity"])
+            if q <= quantity_item:
+                break
+            else: print("Oops!  No stock.  Try again...")
+        except ValueError:
+            print("Oops!  That was no valid quantity.  Try again...")
