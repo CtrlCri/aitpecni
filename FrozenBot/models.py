@@ -17,7 +17,7 @@ class GeoApi():
         except Exception as e:
                 print("One exception:", type(e).__name__, e.args)    
 
-    def is_hot_in_salta(self):
+    def is_hot_in_pehuajo(self):
         try:
             t =  self.temperature
             if t > 28:
