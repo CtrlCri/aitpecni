@@ -1,4 +1,5 @@
 import requests
+import math
 
 class GeoApi():
     def __init__(self):
@@ -12,7 +13,7 @@ class GeoApi():
             results = requests.get("https://api.openweathermap.org/data/2.5/weather", parameters)    
             temp_kelvin = results.json()["main"]["temp"]
        
-            #self.temperature = math.trunc((temp_kelvin - 273.15)) # convierte de kelvin a celcius
+            self.temperature = math.trunc((temp_kelvin - 273.15)) # convierte de kelvin a celcius
         except Exception as e:
                 print("One exception:", type(e).__name__, e.args)    
 
